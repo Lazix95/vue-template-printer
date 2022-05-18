@@ -1,6 +1,7 @@
+import './style/printStyle.scss'
 let vue;
 
-async function $print(template = '<h1>Add Template Parameter</h1>', props) {
+async function print(template, props = {}) {
   const printWrapper = document.createElement('div');
   const el = document.createElement('div');
   const body = document.body;
@@ -11,15 +12,8 @@ async function $print(template = '<h1>Add Template Parameter</h1>', props) {
   body.classList.add('print-ready');
   body.appendChild(printWrapper);
 
-  // const imageKeys = Object.keys(images);
-  // for (const key of imageKeys) {
-  //   const blob = await axios({method: 'get', responseType: 'blob', url: images[key]}).then(res => {
-  //     return res.data;
-  //   })
-  //   images[key] = URL.createObjectURL(blob);
-  // }
-
   const PrintElem = vue.extend(template);
+  console.log(new PrintElem({propsData: props}))
   new PrintElem({propsData: props}).$mount(el);
 
   setTimeout(() => {
@@ -28,14 +22,17 @@ async function $print(template = '<h1>Add Template Parameter</h1>', props) {
     setTimeout(() => {
       body.removeChild(printWrapper);
       body.classList.remove('print-ready');
-      return new Promise.resolve();
+      return Promise.resolve();
     }, 500);
   }, 500)
 }
 
-export default {
-  install(Vue, options) {
+const PrinterPlugin = {
+  install(Vue) {
     vue = Vue;
-    Vue.prototype.$print = $print;
+    Vue.$print = print;
+    Vue.prototype.$print = print;
   }
 };
+
+export default PrinterPlugin;

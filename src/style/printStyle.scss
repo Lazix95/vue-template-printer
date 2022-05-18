@@ -1,0 +1,15 @@
+.print-ready {
+  .pre-print {
+    opacity: 1;
+  }
+  @media print {
+    .pre-print {
+      opacity: 1;
+    }
+    display: block;
+    > :not(.pre-print) {
+      display: none;
+    }
+  }
+}
+
