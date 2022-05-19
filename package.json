@@ -1,6 +1,6 @@
 {
   "name": "vue-template-printer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue.js plugin for printing Vue.js Templates",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -17,7 +17,7 @@
     "vue-template-printer"
   ],
   "author": "Lazar Matic",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lazix95/vue-template-printer/issues"
   },
