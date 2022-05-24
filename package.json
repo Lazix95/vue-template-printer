@@ -1,7 +1,7 @@
 {
   "name": "vue-template-printer",
-  "version": "1.0.5",
-  "description": "Vue.js plugin for printing Vue.js Templates",
+  "version": "1.1.0",
+  "description": "Vue.js plugin for printing Vue Components",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
   "scripts": {
@@ -14,7 +14,11 @@
   "keywords": [
     "Vue.js",
     "vue-printer",
-    "vue-template-printer"
+    "vue printer",
+    "vue-template-printer",
+    "vue template printer",
+    "vue component printer",
+    "vue.js printer"
   ],
   "author": "Lazar Matic",
   "license": "MIT",

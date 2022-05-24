@@ -13,7 +13,6 @@ async function print(template, props = {}) {
   body.appendChild(printWrapper);
 
   const PrintElem = vue.extend(template);
-  console.log(new PrintElem({propsData: props}))
   new PrintElem({propsData: props}).$mount(el);
 
   setTimeout(() => {
